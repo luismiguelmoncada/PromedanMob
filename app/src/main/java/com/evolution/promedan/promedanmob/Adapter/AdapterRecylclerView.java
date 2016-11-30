@@ -75,7 +75,7 @@ public class AdapterRecylclerView extends RecyclerView.Adapter<AdapterRecylclerV
                     activity.startActivity(i); //para poder lanzar la actividad, no se puede directo porq esto es un recycler view
 
                 }
-
+//TESTCOMMIT
 
             }
         });
