@@ -51,5 +51,5 @@ public class Picture {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
-    //testjkhszdfs
+//Test
 }
