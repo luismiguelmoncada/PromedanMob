@@ -11,7 +11,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.evolution.promedan.promedanmob.MainActivity;
 import com.evolution.promedan.promedanmob.R;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 
 public class LoginActivity extends FragmentActivity  {
@@ -19,10 +24,17 @@ public class LoginActivity extends FragmentActivity  {
     private EditText loginEmail;
     private EditText loginPass;
 
+    //libreria para evitar usar tanto codigo especialmente con los onclic, puedo hacer injeccion de codigo
+    @InjectView(R.id.NoAccount)
+    TextView sample_textview;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        ButterKnife.inject(this);
 
         //boton de login
         Button login = (Button) findViewById(R.id.login);
@@ -39,6 +51,12 @@ public class LoginActivity extends FragmentActivity  {
         });
     }
 
+    @OnClick(R.id.NoAccount)
+    public void showToastMessage(){
+        Toast.makeText(LoginActivity.this, "Prueba libreria JakeWharton", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(i);
+    }
     public void crearCuenta(View view){
 
       //  Toast.makeText(getApplicationContext(),"Crear cuenta",Toast.LENGTH_LONG).show();
