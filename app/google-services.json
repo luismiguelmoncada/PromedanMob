@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "185771044172",
+    "firebase_url": "https://promedanmob.firebaseio.com",
+    "project_id": "promedanmob",
+    "storage_bucket": "promedanmob.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185771044172:android:d6f6a7e86cab928d",
+        "android_client_info": {
+          "package_name": "com.evolution.promedan.promedanmob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185771044172-rtens5qsjngh1pb0j7pjt0aff4nfiflc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.evolution.promedan.promedanmob",
+            "certificate_hash": "8EEE72500CC5E05A05B2C0A7DA86C0C4AE82FD83"
+          }
+        },
+        {
+          "client_id": "185771044172-7bfohaktivfnh2mfkdtermslmii67jmf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBiTb_ZAlwBfSGllor51WnMMkMHobW-3c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185771044172-7bfohaktivfnh2mfkdtermslmii67jmf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
