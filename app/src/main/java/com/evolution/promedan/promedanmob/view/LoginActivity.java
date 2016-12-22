@@ -54,7 +54,7 @@ public class LoginActivity extends FragmentActivity  {
     @OnClick(R.id.NoAccount)
     public void showToastMessage(){
         Toast.makeText(LoginActivity.this, "Prueba libreria JakeWharton", Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(LoginActivity.this, MainActivity.class);
+        Intent i = new Intent(LoginActivity.this, ConstraintActivity.class);
         startActivity(i);
     }
     public void crearCuenta(View view){

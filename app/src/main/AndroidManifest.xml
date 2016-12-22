@@ -32,18 +32,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.LoginActivity" />
         </activity>
-        <activity android:name=".view.PictureDetailActivity"
+        <activity
+            android:name=".view.PictureDetailActivity"
             android:parentActivityName=".view.ContainerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.ContainerActivity" />
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:parentActivityName=".view.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.LoginActivity" />
         </activity>
+        <activity
+            android:name=".view.ConstraintActivity"
+            android:label="@string/title_activity_constraint"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
