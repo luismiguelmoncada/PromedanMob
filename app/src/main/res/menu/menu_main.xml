@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.evolution.promedan.promedanmob.MainActivity">
+    tools:context="com.evolution.promedan.promedanmob.view.Login_Registre.MainActivity">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

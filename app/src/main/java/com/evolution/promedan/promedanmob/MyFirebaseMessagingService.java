@@ -11,11 +11,19 @@ import com.google.firebase.messaging.RemoteMessage;
 
 public  class MyFirebaseMessagingService  extends FirebaseMessagingService {
 
-    private static final String TAG = "FCM Service";
+    private static final String TAG = "FIREBASE Service";
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
-        Log.d(TAG, "From: " + remoteMessage.getFrom());
-        Log.e("FIREBASE", remoteMessage.getNotification().getBody());
+
+        // Check if message contains a notification payload.
+        if (remoteMessage.getNotification() != null) {
+            Log.e(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+            Log.e(TAG, "From: " + remoteMessage.getFrom());
+        }
+        // Check if message contains a data payload.
+        if (remoteMessage.getData().size() > 0) {
+            Log.e(TAG, "Message Notification data :" + remoteMessage.getData());
+        }
     }
 }

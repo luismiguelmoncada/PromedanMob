@@ -40,7 +40,7 @@
                 android:value=".view.ContainerActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.Login_Registre.MainActivity"
             android:parentActivityName=".view.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

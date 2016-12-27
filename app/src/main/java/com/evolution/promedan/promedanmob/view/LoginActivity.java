@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.evolution.promedan.promedanmob.MainActivity;
 import com.evolution.promedan.promedanmob.R;
+import com.evolution.promedan.promedanmob.view.Login_Registre.MainActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -54,7 +54,7 @@ public class LoginActivity extends FragmentActivity  {
     @OnClick(R.id.NoAccount)
     public void showToastMessage(){
         Toast.makeText(LoginActivity.this, "Prueba libreria JakeWharton", Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(LoginActivity.this, ConstraintActivity.class);
+        Intent i = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(i);
     }
     public void crearCuenta(View view){

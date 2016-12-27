@@ -15,7 +15,12 @@
     <string name="error_field_required">Este campo es necesario</string>
 
     <!-- Strings related to registre-->
-    <string name="toolbar_titulo">Crear cuenta</string>
+    <string name="toolbar_titulo">Registro de Usuarios</string>
+    <string name="name">Name</string>
+    <string name="username">User Name</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="button_registre">REGISTRE</string>
 
     <!-- Activity Names and Descriptions -->
     <string name="desc_in_activity_splash">BIENVENIDO</string>
