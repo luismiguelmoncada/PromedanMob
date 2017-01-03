@@ -49,14 +49,15 @@
         <activity
             android:name=".view.ConstraintActivity"
             android:label="@string/title_activity_constraint"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
+        <activity android:name=".TestRetrofit2.Main2Activity"></activity>
     </application>
 
 </manifest>

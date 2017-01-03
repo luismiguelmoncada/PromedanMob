@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.evolution.promedan.promedanmob.Model.ServerRequest;
 import com.evolution.promedan.promedanmob.Model.ServerResponse;
 import com.evolution.promedan.promedanmob.Model.User;
+import com.evolution.promedan.promedanmob.Model.Usuario;
 import com.evolution.promedan.promedanmob.R;
 
 import retrofit2.Call;
@@ -106,7 +107,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                 if(!old_password.isEmpty() && !new_password.isEmpty()){
 
                     progress.setVisibility(View.VISIBLE);
-                    changePasswordProcess(pref.getString(Constants.EMAIL,""),old_password,new_password);
+                    //hangePasswordProcess(pref.getString(Constants.EMAIL,""),old_password,new_password);
 
                 }else {
 
@@ -146,7 +147,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         ft.replace(R.id.fragment_frame,login);
         ft.commit();
     }
-
+/*
     private void changePasswordProcess(String email,String old_password,String new_password){
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -160,10 +161,16 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         user.setEmail(email);
         user.setOld_password(old_password);
         user.setNew_password(new_password);
-        ServerRequest request = new ServerRequest();
+
+        Usuario user=new Usuario();
+        user.setName("name");
+        user.setUsername("pruebausername");
+        user.setPassword("password");
+        user.setEmail(email);
+        ServerRequest request = new ServerRequest(Constants.REGISTER_OPERATION,user);
         request.setOperation(Constants.CHANGE_PASSWORD_OPERATION);
         request.setUser(user);
-        Call<ServerResponse> response = requestInterface.operation(request);
+        Call<ServerResponse> response = requestInterface.operation(user);
 
         response.enqueue(new Callback<ServerResponse>() {
             @Override
@@ -174,12 +181,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                     progress.setVisibility(View.GONE);
                     tv_message.setVisibility(View.GONE);
                     dialog.dismiss();
-                    Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
+                   // Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
 
                 }else {
                     progress.setVisibility(View.GONE);
                     tv_message.setVisibility(View.VISIBLE);
-                    tv_message.setText(resp.getMessage());
+                    //tv_message.setText(resp.getMessage());
 
                 }
             }
@@ -195,4 +202,5 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
             }
         });
     }
+*/
 }

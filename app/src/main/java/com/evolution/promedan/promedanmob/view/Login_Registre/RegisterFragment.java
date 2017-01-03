@@ -14,10 +14,14 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.evolution.promedan.promedanmob.ApiREST.Response;
+import com.evolution.promedan.promedanmob.ApiREST.ResponseTypeAdapter;
 import com.evolution.promedan.promedanmob.Model.ServerRequest;
 import com.evolution.promedan.promedanmob.Model.ServerResponse;
 import com.evolution.promedan.promedanmob.Model.User;
+import com.evolution.promedan.promedanmob.Model.Usuario;
 import com.evolution.promedan.promedanmob.R;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -92,45 +96,41 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     private void registerProcess(String name, String email,String password){
 
         Gson gson = new GsonBuilder()
-                .setLenient()
+                //.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                //.setLenient()
                 .create();
 
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
-                .client(client)
+                .client(httpClient.build())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
+        Usuario user = new Usuario(name,"pruebausername",password,email);
         RequestInterface requestInterface = retrofit.create(RequestInterface.class);
+        Call<Usuario> call = requestInterface.CrearUsuario(user);
 
-        User user = new User();
-        user.setName(name);
-        user.setEmail(email);
-        user.setPassword(password);
-        ServerRequest request = new ServerRequest();
-        request.setOperation(Constants.REGISTER_OPERATION);
-        request.setUser(user);
-        Call<ServerResponse> response = requestInterface.operation(request);
-
-        response.enqueue(new Callback<ServerResponse>() {
+        call.enqueue(new Callback<Usuario>() {
             @Override
-            public void onResponse(Call<ServerResponse> call, retrofit2.Response<ServerResponse> response) {
+            public void onResponse(Call<Usuario> call, retrofit2.Response<Usuario> response) {
 
-                ServerResponse resp = response.body();
-                Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
+                Usuario resp = response.body();
+                Snackbar.make(getView(), "Llego", Snackbar.LENGTH_LONG).show();
                 progress.setVisibility(View.INVISIBLE);
             }
 
             @Override
-            public void onFailure(Call<ServerResponse> call, Throwable t) {
+            public void onFailure(Call<Usuario> call, Throwable t) {
 
                 progress.setVisibility(View.INVISIBLE);
                 Log.d(Constants.TAG,"failed");
                 Snackbar.make(getView(), t.getLocalizedMessage(), Snackbar.LENGTH_LONG).show();
 
             }
+
         });
     }
 

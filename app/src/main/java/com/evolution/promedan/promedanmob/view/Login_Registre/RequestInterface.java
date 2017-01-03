@@ -2,6 +2,8 @@ package com.evolution.promedan.promedanmob.view.Login_Registre;
 
 import com.evolution.promedan.promedanmob.Model.ServerRequest;
 import com.evolution.promedan.promedanmob.Model.ServerResponse;
+import com.evolution.promedan.promedanmob.Model.User;
+import com.evolution.promedan.promedanmob.Model.Usuario;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -12,7 +14,7 @@ import retrofit2.http.POST;
  */
 
 public interface RequestInterface {
-    @POST("Retrofit-Prueba/")
-    Call<ServerResponse> operation(@Body ServerRequest request);
+    @POST("/api/retrofit_users")
+    Call<Usuario> CrearUsuario(@Body Usuario user);
 
 }

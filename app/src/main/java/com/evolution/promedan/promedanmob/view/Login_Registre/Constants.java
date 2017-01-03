@@ -5,7 +5,7 @@ package com.evolution.promedan.promedanmob.view.Login_Registre;
  */
 
 public class Constants {
-    public static final String BASE_URL = "http://webserverandroid.site88.net/";
+    public static final String BASE_URL = "http://192.168.0.109:64432/";
     public static final String REGISTER_OPERATION = "register";
     public static final String LOGIN_OPERATION = "login";
     public static final String CHANGE_PASSWORD_OPERATION = "chgPass";

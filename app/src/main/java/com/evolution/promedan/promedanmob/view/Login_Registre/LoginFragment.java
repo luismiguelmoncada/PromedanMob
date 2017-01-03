@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.evolution.promedan.promedanmob.Model.ServerRequest;
 import com.evolution.promedan.promedanmob.Model.ServerResponse;
 import com.evolution.promedan.promedanmob.Model.User;
+import com.evolution.promedan.promedanmob.Model.Usuario;
 import com.evolution.promedan.promedanmob.R;
 import com.evolution.promedan.promedanmob.view.Login_Registre.*;
 
@@ -80,7 +81,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                 if(!email.isEmpty() && !password.isEmpty()) {
 
                     progress.setVisibility(View.VISIBLE);
-                    loginProcess(email,password);
+                    //loginProcess(email,password);
 
                 } else {
 
@@ -90,30 +91,37 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
         }
     }
+    /*
+        private void loginProcess(String email,String password){
 
-    private void loginProcess(String email,String password){
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(Constants.BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+            RequestInterface requestInterface = retrofit.create(RequestInterface.class);
 
-        RequestInterface requestInterface = retrofit.create(RequestInterface.class);
+            User user = new User();
+            user.setEmail(email);
+            user.setPassword(password);
 
-        User user = new User();
+        Usuario user=new Usuario();
+        user.setName("name");
+        user.setUsername("pruebausername");
+        user.setPassword("password");
         user.setEmail(email);
-        user.setPassword(password);
-        ServerRequest request = new ServerRequest();
+        ServerRequest request = new ServerRequest(Constants.REGISTER_OPERATION,user);
         request.setOperation(Constants.LOGIN_OPERATION);
         request.setUser(user);
-        Call<ServerResponse> response = requestInterface.operation(request);
+
+        Call<ServerResponse> response = requestInterface.operation(user);
 
         response.enqueue(new Callback<ServerResponse>() {
             @Override
             public void onResponse(Call<ServerResponse> call, retrofit2.Response<ServerResponse> response) {
 
                 ServerResponse resp = response.body();
-                Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
+                //Snackbar.make(getView(), resp.getMessage(), Snackbar.LENGTH_LONG).show();
                 Log.e("respuesta servidor",resp.getResult());
 
                 if(resp.getResult().equals(Constants.SUCCESS)){
@@ -139,7 +147,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
             }
         });
     }
-
+*/
     private void goToRegister(){
 
         Fragment register = new RegisterFragment();

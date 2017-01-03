@@ -1,15 +1,30 @@
 package com.evolution.promedan.promedanmob.Model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by LUISM on 27/12/2016.
  */
 
 public class User {
+    @SerializedName("name")
+
     private String name;
+    @SerializedName("email")
+
     private String email;
+    @SerializedName("unique_id")
+
     private String unique_id;
+    @SerializedName("password")
+
     private String password;
+    @SerializedName("old_password")
+
     private String old_password;
+    @SerializedName("new_password")
+
     private String new_password;
 
     public String getName() {
